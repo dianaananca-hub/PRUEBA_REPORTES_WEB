@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes Power BI Responsivos</title>
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* por defecto 2 columnas */
+      grid-template-rows: 1fr 1fr;   /* 2 filas */
+      gap: 5px;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 📱 En pantallas chicas: 1 reporte por fila */
+    @media (max-width: 768px) {
+      .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+    }
+
+    /* 💻 En pantallas medianas: 2 columnas, 2 filas */
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .contenedor {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+
+    /* 🖥️ En pantallas grandes: 2x2 (ya está por defecto) */
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <iframe id="RESUMEN_DIARIO"
+      src="https://app.powerbi.com/view?r=eyJrIjoiNjA1Njg3MGItZWY3Ni00NWYxLTljZjQtYWI0YzUwMTY2OTNiIiwidCI6Ijg3NDBhYjRmLWNhZTYtNDM5NS1hODU3LTM4NzI2NjIyN2VkMCIsImMiOjR9"
+      allowFullScreen="true">
+    </iframe>
+
+    <iframe id="RECEPCION_Y_ABASTECIMIENTO"
+      src="https://app.powerbi.com/view?r=eyJrIjoiNGYyMzlkMDQtYWVkNy00NjZiLTgyZjUtZjRjODUwMDQyMjA5IiwidCI6Ijg3NDBhYjRmLWNhZTYtNDM5NS1hODU3LTM4NzI2NjIyN2VkMCIsImMiOjR9"
+      allowFullScreen="true">
+    </iframe>
+
+    <iframe id="ASIGNACION_COMERCIAL"
+      src="https://app.powerbi.com/view?r=eyJrIjoiZWFmZjcxMjYtN2FmMi00N2UxLWI5NzEtMGQzNzE2MDJjODBiIiwidCI6Ijg3NDBhYjRmLWNhZTYtNDM5NS1hODU3LTM4NzI2NjIyN2VkMCIsImMiOjR9"
+      allowFullScreen="true">
+    </iframe>
+
+    <iframe id="CUMPLIMIENTO_DIARIO"
+      src="https://app.powerbi.com/view?r=eyJrIjoiYjYzMWQ0MTItYWQyNi00NjA5LWFhNzEtNWZiYWEwMmQ5OTkwIiwidCI6Ijg3NDBhYjRmLWNhZTYtNDM5NS1hODU3LTM4NzI2NjIyN2VkMCIsImMiOjR9"
+      allowFullScreen="true">
+    </iframe>
+  </div>
+</body>
+</html>
